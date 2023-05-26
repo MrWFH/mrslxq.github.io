@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>꒰ঌ🤍໒꒱网</title>
+	      <!--定义底部承载游动小鱼特效的div样式开始-->
+		  <style type="text/css">
+			.container{
+			margin:0;
+			padding:0;
+			background-color:transparent;
+			width:100%;
+			height:200px;
+			z-index:999;
+			position:fixed;
+			bottom:0;
+			left:0;
+		}
+			@font-face {
+		  font-family: digifaw;
+		  src: url("DS-DIGIT.ttf");
+		}
+		</style>
+		<style type="text/css">
+		
+		#times{
+			width: 100%;
+			height: 300px;
+			z-index:999;
+			position:fixed;
+			top:20px;
+			left:20px;
+			font-size: 35px;
+			font-family: digifaw;
+			color: aqua;
+		}
+
+		</style>
+</head>
+
+<body>
+	
+	<div class="jq22">
+		
+	</div>
+	<div id="times"></div>
+
+	<div id="jsi-flying-fish-container" class="container">   </div>
+	
+               <!--承载游动小鱼特效的div容器-->
+   
+			   <script src="./jquery-1.11.0.min.js"></script>
+			   <script type="text/javascript" src="./jquery.fireworks.js"></script>
+			   <script src='./fish.js'></script>
+	<script type="text/javascript">
+		$('.jq22').fireworks({ 
+		  sound: false, // sound effect
+		  opacity: 0.9, 
+		  width: '100%', 
+		  height: '100%' 
+		});
+	</script>
+	<script type="text/javascript">
+		function showTime(clock){
+var now = new Date();
+var year = now.getFullYear();
+var month= now.getMonth();
+var day = now.getDate();
+var hour = now.getHours();
+var minu = now.getMinutes();
+var second = now.getSeconds();
+month = month+1;
+// var arr_work = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+// var week = arr_work[now.getDay()] ;
+var time = year+"/"+month+"/"+day+" "+hour+":"+((minu<10)?'0':'')+minu+":"+((second<10)?'0':'')+second;
+clock.innerHTML= time;
+console.log('time')
+		}
+window.onload = function(){
+	var clock = document .getElementById("times");
+	window.setInterval(()=>{
+		showTime(clock);
+	},1000);
+}
+
+	</script>
+</body>
+</html>
